@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宁心 - 冥想App原型</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        .app-container {
+            max-width: 414px;
+            height: 896px;
+            border-radius: 40px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            margin: 0 auto;
+        }
+        .screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            background-color: #FAFAFA;
+        }
+        .ios-status-bar {
+            height: 44px;
+            padding: 0 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .ios-home-indicator {
+            position: absolute;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 134px;
+            height: 5px;
+            background-color: #000;
+            border-radius: 100px;
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-4">
+    <h1 class="text-3xl font-bold text-center my-6">宁心 - 冥想App原型设计</h1>
+    
+    <!-- 原型设计说明 -->
+    <div class="max-w-4xl mx-auto mb-8 bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-2xl font-semibold mb-4">产品概述</h2>
+        <p class="mb-4">宁心是一款专注于冥想、减压和睡眠改善的iOS应用。它提供了丰富的冥想课程、睡眠故事和舒缓音乐，帮助用户培养正念习惯，改善心理健康，提高睡眠质量。</p>
+        
+        <h2 class="text-2xl font-semibold mb-4">核心功能</h2>
+        <ul class="list-disc pl-6 mb-4 space-y-2">
+            <li>个性化的冥想课程推荐</li>
+            <li>进度跟踪和习惯养成</li>
+            <li>睡眠故事和舒缓音乐库</li>
+            <li>呼吸练习和正念提醒</li>
+            <li>社区分享和互动</li>
+        </ul>
+        
+        <h2 class="text-2xl font-semibold mb-4">目标用户</h2>
+        <ul class="list-disc pl-6 mb-4 space-y-2">
+            <li>压力较大的职场人士</li>
+            <li>睡眠质量不佳的人群</li>
+            <li>希望培养冥想习惯的初学者</li>
+            <li>寻求心灵平静的高压环境工作者</li>
+            <li>关注自我成长的年轻人</li>
+        </ul>
+    </div>
+    
+    <!-- 页面原型展示 -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        
+        <!-- 欢迎页 -->
+        <div class="mb-12">
+            <h3 class="text-xl font-semibold mb-4 text-center">欢迎页</h3>
+            <div class="app-container bg-indigo-900">
+                <div class="screen bg-gradient-to-b from-indigo-900 to-purple-800 flex flex-col items-center justify-between p-8 text-white">
+                    <div class="ios-status-bar">
+                        <div>9:41</div>
+                        <div class="flex space-x-2">
+                            <span class="material-icons text-sm">signal_cellular_alt</span>
+                            <span class="material-icons text-sm">wifi</span>
+                            <span class="material-icons text-sm">battery_full</span>
+                        </div>
+                    </div>
+                    
+                    <div></div>
+                    
+                    <div class="text-center">
+                        <h1 class="text-4xl font-bold mb-2">宁心</h1>
+                        <p class="text-xl opacity-80 mb-10">找到内心的平静</p>
+                        <img src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWVkaXRhdGlvbnxlbnwwfHwwfHx8MA%3D%3D" 
+                             alt="冥想图片" 
+                             class="w-64 h-64 object-cover rounded-full mx-auto mb-12">
+                    </div>
+                    
+                    <div class="w-full space-y-4">
+                        <button class="w-full bg-white text-indigo-900 py-4 rounded-xl font-semibold">开始体验</button>
+                        <button class="w-full border border-white bg-transparent text-white py-4 rounded-xl font-semibold">登录</button>
+                    </div>
+                    
+                    <div class="ios-home-indicator bg-white"></div>
+                </div>
+            </div>
+            <p class="mt-4 text-sm text-gray-600 text-center">欢迎页展示了应用的品牌和主要价值主张，让用户对应用有直观感受。</p>
+        </div>
+        
+        <!-- 登录页 -->
+        <div class="mb-12">
+            <h3 class="text-xl font-semibold mb-4 text-center">登录页</h3>
+            <div class="app-container">
+                <div class="screen bg-white flex flex-col items-center justify-between p-8">
+                    <div class="ios-status-bar text-gray-800">
+                        <div>9:41</div>
+                        <div class="flex space-x-2">
+                            <span class="material-icons text-sm">signal_cellular_alt</span>
+                            <span class="material-icons text-sm">wifi</span>
+                            <span class="material-icons text-sm">battery_full</span>
+                        </div>
+                    </div>
+                    
+                    <div class="w-full pt-8">
+                        <button class="absolute top-6 left-6">
+                            <span class="material-icons">arrow_back_ios</span>
+                        </button>
+                        <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">登录</h1>
+                        
+                        <div class="space-y-6 w-full">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-600 mb-2">电子邮箱</label>
+                                <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="your@email.com">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-600 mb-2">密码</label>
+                                <input type="password" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="输入密码">
+                            </div>
+                            
+                            <div class="text-right">
+                                <a href="#" class="text-indigo-600 font-medium text-sm">忘记密码?</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="w-full space-y-6">
+                        <button class="w-full bg-indigo-600 text-white py-4 rounded-xl font-semibold">登录</button>
+                        
+                        <div class="relative w-full text-center">
+                            <div class="absolute inset-0 flex items-center">
+                                <div class="w-full border-t border-gray-300"></div>
+                            </div>
+                            <div class="relative flex justify-center">
+                                <span class="px-4 bg-white text-sm text-gray-500">或通过以下方式登录</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-center space-x-6">
+                            <button class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                </svg>
+                            </button>
+                            <button class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-400" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37 4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z"/>
+                                </svg>
+                            </button>
+                            <button class="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        
+                        <div class="text-center text-sm text-gray-600">
+                            <span>还没有账号? </span>
+                            <a href="#" class="text-indigo-600 font-medium">立即注册</a>
+                        </div>
+                    </div>
+                    
+                    <div class="ios-home-indicator"></div>
+                </div>
+            </div>
+            <p class="mt-4 text-sm text-gray-600 text-center">登录页面提供了多种方式的登录选项，同时提供注册和找回密码的入口。</p>
+        </div>
+        
+        <!-- 主页 -->
+        <div class="mb-12">
+            <h3 class="text-xl font-semibold mb-4 text-center">首页</h3>
+            <div class="app-container">
+                <div class="screen bg-gray-50">
+                    <div class="ios-status-bar bg-white text-gray-800 border-b border-gray-200">
+                        <div>9:41</div>
+                        <div class="flex space-x-2">
+                            <span class="material-icons text-sm">signal_cellular_alt</span>
+                            <span class="material-icons text-sm">wifi</span>
+                            <span class="material-icons text-sm">battery_full</span>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-8">
+                            <div>
+                                <h1 class="text-2xl font-bold text-gray-800">早上好，李明</h1>
+                                <p class="text-gray-500">今天是个适合冥想的好日子</p>
+                            </div>
+                            <div class="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center">
+                                <span class="material-icons text-indigo-600">notifications_none</span>
+                            </div>
+                        </div>
+                        
+                        <!-- 每日推荐 -->
+                        <div class="mb-8">
+                            <h2 class="text-lg font-semibold text-gray-800 mb-4">今日推荐</h2>
+                            <div class="relative rounded-2xl overflow-hidden shadow-md">
+                                <img src="https://images.unsplash.com/photo-1604881991720-f91add269bed?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bWluZGZ1bG5lc3N8ZW58MHx8MHx8fDA%3D" 
+                                     alt="正念冥想" 
+                                     class="w-full h-48 object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-indigo-900/80 to-transparent flex flex-col justify-end p-4 text-white">
+                                    <div class="bg-white/20 text-white text-xs font-medium px-2 py-1 rounded-full w-max mb-2">
+                                        15分钟
+                                    </div>
+                                    <h3 class="text-xl font-bold mb-1">专注呼吸的正念冥想</h3>
+                                    <p class="text-white/80 text-sm">缓解压力，提升专注力</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 持续冥想挑战 -->
+                        <div class="mb-8">
+                            <h2 class="text-lg font-semibold text-gray-800 mb-4">你的冥想挑战</h2>
+                            <div class="bg-white rounded-2xl p-4 shadow-sm">
+                                <div class="flex justify-between items-center mb-4">
+                                    <div>
+                                        <h3 class="font-semibold text-gray-800">7天专注力提升</h3>
+                                        <p class="text-gray-500 text-sm">第3天，共7天</p>
+                                    </div>
+                                    <div class="text-indigo-600 font-medium text-sm">
+                                        继续
+                                    </div>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 42%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 冥想分类 -->
+                        <div class="mb-8">
+                            <h2 class="text-lg font-semibold text-gray-800 mb-4">浏览分类</h2>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-blue-50 rounded-2xl p-4 text-center">
+                                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                                        <span class="material-icons text-blue-600">self_improvement</span>
+                                    </div>
+                                    <h3 class="font-medium text-gray-800">入门冥想</h3>
+                                </div>
+                                <div class="bg-purple-50 rounded-2xl p-4 text-center">
+                                    <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                                        <span class="material-icons text-purple-600">nightlight</span>
+                                    </div>
+                                    <h3 class="font-medium text-gray-800">睡眠辅助</h3>
+                                </div>
+                                <div class="bg-amber-50 rounded-2xl p-4 text-center">
+                                    <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                                        <span class="material-icons text-amber-600">psychology</span>
+                                    </div>
+                                    <h3 class="font-medium text-gray-800">专注力提升</h3>
+                                </div>
+                                <div class="bg-green-50 rounded-2xl p-4 text-center">
+                                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                                        <span class="material-icons text-green-600">sentiment_satisfied</span>
+                                    </div>
+                                    <h3 class="font-medium text-gray-800">情绪舒缓</h3>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 热门课程 -->
+                        <div>
+                            <div class="flex justify-between items-center mb-4">
+                                <h2 class="text-lg font-semibold text-gray-800">热门课程</h2>
+                                <a href="#" class="text-indigo-600 text-sm font-medium">查看全部</a>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="flex bg-white rounded-xl overflow-hidden shadow-sm">
+                                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWVkaXRhdGlvbnxlbnwwfHwwfHx8MA%3D%3D" 
+                                         alt="舒缓焦虑" 
+                                         class="w-24 h-24 object-cover">
+                                    <div class="p-3 flex-1">
+                                        <div class="flex justify-between">
+                                            <h3 class="font-semibold text-gray-800">舒缓焦虑冥想</h3>
+                                            <div class="bg-gray-100 text-gray-600 text-xs font-medium px-2 py-1 rounded-full">
+                                                10分钟
+                                            </div>
+                                        </div>
+                                        <p class="text-gray-500 text-sm">舒缓紧张情绪，平静身心</p>
+                                        <div class="flex items-center mt-1">
+                                            <div class="flex text-amber-400">
+                                                <span class="material-icons text-sm">star</span>
+                                                <span class="material-icons text-sm">star</span>
+                                                <span class="material-icons text-sm">star</span>
+                                                <span class="material-icons text-sm">star</span>
+                                                <span class="material-icons text-sm">star_half</span>
+                                            </div>
+                                            <span class="text-gray-500 text-xs ml-1">4.5</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex bg-white rounded-xl overflow-hidden shadow-sm">
+                                    <img src="https://images.unsplash.com/photo-1474418397713-7ede21d49118?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fG1lZGl0YXRpb258ZW58MHx8MHx8fDA%3D" 
+                                         alt="深度睡眠" 
+                                         class="w-24 h-24 object-cover">
+                                    <div class="p-3 flex-1">
+                                        <div class="flex justify-between">
+                                            <h3 class="font-semibold text-gray-800">深度睡眠引导</h3>
+                                            <div class="bg-gray-100 text-gray-600 text-xs font-medium px-2 py-1 rounded-full">
+                                                20分钟
+                                            </div>
+                                        </div>
+                                        <p class="text-gray-500 text-sm">入眠困难者的专属指南</p>
+                                        <div class="flex items-center mt-1">
+                                            <div class="flex text-amber-400">
+                                                <span class="material-icons text-sm">star</span>
+                                                <span class="material-icons text-sm">star</span>
+                                                <span class="material-icons text-sm">star</span>
+                                                <span class="material-icons text-sm">star</span>
+                                                <span class="material-icons text-sm">star_outline</span>
+                                            </div>
+                                            <span class="text-gray-500 text-xs ml-1">4.0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 底部导航栏 -->
+                    <div class="absolute bottom-0 left-0 w-full bg-white border-t border-gray-200 p-2 flex justify-around">
+                        <div class="flex flex-col items-center">
+                            <span class="material-icons text-indigo-600">home</span>
+                            <span class="text-xs text-indigo-600 font-medium mt-1">首页</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <span class="material-icons text-gray-400">explore</span>
+                            <span class="text-xs text-gray-500 mt-1">发现</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <span class="material-icons text-gray-400">queue_music</span>
+                            <span class="text-xs text-gray-500 mt-1">音乐</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <span class="material-icons text-gray-400">person</span>
+                            <span class="text-xs text-gray-500 mt-1">我的</span>
+                        </div>
+                    </div>
+                    
+                    <div class="ios-home-indicator"></div>
+                </div>
+            </div>
+            <p class="mt-4 text-sm text-gray-600 text-center">首页展示了用户的个性化推荐、进行中的挑战以及分类浏览入口。</p>
+        </div>
+        
+        <!-- 导航栏 -->
+        <div class="mb-12">
+            <h3 class="text-xl font-semibold mb-4 text-center">底部导航栏</h3>
+            <div class="app-container">
+                <div class="screen flex flex-col justify-end">
+                    <div class="bg-white border-t border-gray-200 p-2">
+                        <div class="flex justify-around">
+                            <div class="flex flex-col items-center">
+                                <span class="material-icons text-indigo-600">home</span>
+                                <span class="text-xs text-indigo-600 font-medium mt-1">首页</span>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <span class="material-icons text-gray-400">explore</span>
+                                <span class="text-xs text-gray-500 mt-1">发现</span>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <span class="material-icons text-gray-400">queue_music</span>
+                                <span class="text-xs text-gray-500 mt-1">音乐</span>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <span class="material-icons text-gray-400">person</span>
+                                <span class="text-xs text-gray-500 mt-1">我的</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ios-home-indicator"></div>
+                </div>
+            </div>
+            <p class="mt-4 text-sm text-gray-600 text-center">底部导航栏提供了应用的主要功能区域的快速访问。</p>
+        </div>
+        
+        <!-- 冥想详情页 -->
+        <div class="mb-12">
+            <h3 class="text-xl font-semibold mb-4 text-center">冥想课程详情</h3>
+            <div class="app-container">
+                <div class="screen bg-white">
+                    <div class="ios-status-bar text-white">
+                        <div>9:41</div>
+                        <div class="flex space-x-2">
+                            <span class="material-icons text-sm">signal_cellular_alt</span>
+                            <span class="material-icons text-sm">wifi</span>
+                            <span class="material-icons text-sm">battery_full</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 顶部图片 -->
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWVkaXRhdGlvbnxlbnwwfHwwfHx8MA%3D%3D" 
+                             alt="舒缓焦虑" 
+                             class="w-full h-64 object-cover">
+                        <div class="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-black/50 to-transparent"></div>
+                        <button class="absolute top-4 left-4 w-10 h-10 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-md">
+                            <span class="material-icons text-white">arrow_back</span>
+                        </button>
+                        <button class="absolute top-4 right-4 w-10 h-10 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-md">
+                            <span class="material-icons text-white">favorite_border</span>
+                        </button>
+                    </div>
+                    
+                    <!-- 详情内容 -->
+                    <div class="px-6 py-5">
+                        <div class="flex justify-between items-start mb-4">
+                            <h1 class="text-2xl font-bold text-gray-800">舒缓焦虑冥想</h1>
+                            <div class="bg-indigo-100 text-indigo-600 text-sm font-medium px-3 py-1 rounded-full">
+                                10分钟
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center mb-5">
+                            <div class="flex text-amber-400">
+                                <span class="material-icons text-sm">star</span>
+                                <span class="material-icons text-sm">star</span>
+                                <span class="material-icons text-sm">star</span>
+                                <span class="material-icons text-sm">star</span>
+                                <span class="material-icons text-sm">star_half</span>
+                            </div>
+                            <span class="text-gray-600 text-sm ml-1">4.5 (128评价)</span>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-6">
+                            这个10分钟的引导式冥想帮助你舒缓焦虑情绪，放松身心。适合在感到压力和紧张时进行，或作为日常减压练习的一部分。无需任何冥想经验，跟随指导即可完成。
+                        </p>
+                        
+                        <!-- 讲师信息 -->
+                        <div class="flex items-center mb-6">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D" 
+                                 alt="讲师头像" 
+                                 class="w-12 h-12 rounded-full object-cover">
+                            <div class="ml-3">
+                                <h3 class="text-gray-800 font-medium">林雨晴</h3>
+                                <p class="text-gray-500 text-sm">正念冥想导师 · 5年经验</p>
+                            </div>
+                        </div>
+                        
+                        <!-- 内容标签 -->
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <div class="bg-gray-100 text-gray-600 text-xs font-medium px-3 py-1.5 rounded-full">
+                                减压
+                            </div>
+                            <div class="bg-gray-100 text-gray-600 text-xs font-medium px-3 py-1.5 rounded-full">
+                                焦虑缓解
+                            </div>
+                            <div class="bg-gray-100 text-gray-600 text-xs font-medium px-3 py-1.5 rounded-full">
+                                初学者友好
+                            </div>
+                            <div class="bg-gray-100 text-gray-600 text-xs font-medium px-3 py-1.5 rounded-full">
+                                正念
+                            </div>
+                        </div>
+                        
+                        <!-- 冥想效果 -->
+                        <h2 class="text-lg font-semibold text-gray-800 mb-3">你将获得</h2>
+                        <div class="space-y-3 mb-8">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-3">
+                                    <span class="material-icons text-green-600 text-sm">check</span>
+                                </div>
+                                <p class="text-gray-600">缓解焦虑和紧张情绪</p>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-3">
+                                    <span class="material-icons text-green-600 text-sm">check</span>
+                                </div>
+                                <p class="text-gray-600">提高身体放松能力</p>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-3">
+                                    <span class="material-icons text-green-600 text-sm">check</span>
+                                </div>
+                                <p class="text-gray-600">培养面对压力的正念态度</p>
+                            </div>
+                        </div>
+                        
+                        <!-- 开始冥想按钮 -->
+                        <button class="w-full bg-indigo-600 text-white py-4 rounded-xl font-semibold mb-3">
+                            开始冥想
+                        </button>
+                        <button class="w-full border border-gray-300 bg-white text-gray-600 py-4 rounded-xl font-semibold">
+                            下载离线使用
+                        </button>
+                    </div>
+                    
+                    <div class="ios-home-indicator"></div>
+                </div>
+            </div>
+            <p class="mt-4 text-sm text-gray-600 text-center">课程详情页提供了冥想课程的详细信息，包括时长、难度、效果和讲师介绍。</p>
+        </div>
+        
+        <!-- 冥想播放页 -->
+        <div class="mb-12">
+            <h3 class="text-xl font-semibold mb-4 text-center">冥想播放器</h3>
+            <div class="app-container">
+                <div class="screen bg-gradient-to-b from-indigo-900 to-purple-900 flex flex-col">
+                    <div class="ios-status-bar text-white">
+                        <div>9:41</div>
+                        <div class="flex space-x-2">
+                            <span class="material-icons text-sm">signal_cellular_alt</span>
+                            <span class="material-icons text-sm">wifi</span>
+                            <span class="material-icons text-sm">battery_full</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 顶部按钮 -->
+                    <div class="px-6 py-4 flex justify-between">
+                        <button class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-md">
+                            <span class="material-icons text-white">keyboard_arrow_down</span>
+                        </button>
+                        <button class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-md">
+                            <span class="material-icons text-white">more_horiz</span>
+                        </button>
+                    </div>
+                    
+                    <!-- 主要内容 -->
+                    <div class="flex-1 flex flex-col items-center justify-between px-8 pt-8 pb-14">
+                        <!-- 冥想图片 -->
+                        <div class="mb-8">
+                            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWVkaXRhdGlvbnxlbnwwfHwwfHx8MA%3D%3D" 
+                                 alt="舒缓焦虑" 
+                                 class="w-52 h-52 rounded-2xl object-cover shadow-2xl mx-auto">
+                        </div>
+                        
+                        <!-- 冥想标题 -->
+                        <div class="text-center mb-8">
+                            <h1 class="text-2xl font-bold text-white mb-1">舒缓焦虑冥想</h1>
+                            <p class="text-white/70">林雨晴 · 减压冥想</p>
+                        </div>
+                        
+                        <!-- 进度显示 -->
+                        <div class="w-full mb-8">
+                            <div class="flex justify-between text-white/70 text-sm mb-2">
+                                <span>3:45</span>
+                                <span>10:00</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/20 rounded-full">
+                                <div class="h-1.5 bg-white rounded-full" style="width: 37.5%"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- 控制按钮 -->
+                        <div class="flex items-center justify-center space-x-8 mb-8">
+                            <button class="text-white">
+                                <span class="material-icons text-3xl">skip_previous</span>
+                            </button>
+                            <button class="text-white">
+                                <span class="material-icons text-3xl">replay_10</span>
+                            </button>
+                            <button class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
+                                <span class="material-icons text-indigo-800 text-3xl">pause</span>
+                            </button>
+                            <button class="text-white">
+                                <span class="material-icons text-3xl">forward_10</span>
+                            </button>
+                            <button class="text-white">
+                                <span class="material-icons text-3xl">skip_next</span>
+                            </button>
+                        </div>
+                        
+                        <!-- 额外控制 -->
+                        <div class="w-full flex justify-around">
+                            <button class="flex flex-col items-center">
+                                <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-md mb-1">
+                                    <span class="material-icons text-white">schedule</span>
+                                </div>
+                                <span class="text-white/70 text-xs">定时</span>
+                            </button>
+                            <button class="flex flex-col items-center">
+                                <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-md mb-1">
+                                    <span class="material-icons text-white">speed</span>
+                                </div>
+                                <span class="text-white/70 text-xs">语速</span>
+                            </button>
+                            <button class="flex flex-col items-center">
+                                <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-md mb-1">
+                                    <span class="material-icons text-white">volume_up</span>
+                                </div>
+                                <span class="text-white/70 text-xs">音量</span>
+                            </button>
+                            <button class="flex flex-col items-center">
+                                <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-md mb-1">
+                                    <span class="material-icons text-white">playlist_add</span>
+                                </div>
+                                <span class="text-white/70 text-xs">收藏</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="ios-home-indicator bg-white"></div>
+                </div>
+            </div>
+            <p class="mt-4 text-sm text-gray-600 text-center">冥想播放页提供了直观的播放控制，沉浸式的体验设计能帮助用户更好地进入冥想状态。</p>
+        </div>
+        
+        <!-- 个人统计页 -->
+        <div class="mb-12">
+            <h3 class="text-xl font-semibold mb-4 text-center">个人统计页</h3>
+            <div class="app-container">
+                <div class="screen bg-gray-50">
+                    <div class="ios-status-bar bg-white text-gray-800 border-b border-gray-200">
+                        <div>9:41</div>
+                        <div class="flex space-x-2">
+                            <span class="material-icons text-sm">signal_cellular_alt</span>
+                            <span class="material-icons text-sm">wifi</span>
+                            <span class="material-icons text-sm">battery_full</span>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6 pb-20">
+                        <!-- 个人信息 -->
+                        <div class="flex items-center mb-8">
+                            <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D" 
+                                 alt="用户头像" 
+                                 class="w-16 h-16 rounded-full object-cover border-2 border-white shadow-md">
+                            <div class="ml-4">
+                                <h1 class="text-xl font-bold text-gray-800">李明</h1>
+                                <p class="text-gray-500">冥想初学者</p>
+                            </div>
+                            <button class="ml-auto">
+                                <span class="material-icons text-gray-500">settings</span>
+                            </button>
+                        </div>
+                        
+                        <!-- 冥想统计卡片 -->
+                        <div class="bg-white rounded-2xl shadow-sm p-5 mb-6">
+                            <h2 class="text-lg font-semibold text-gray-800 mb-5">冥想统计</h2>
+                            
+                            <div class="grid grid-cols-3 gap-4 mb-5">
+                                <div class="text-center">
+                                    <p class="text-2xl font-bold text-indigo-600">14</p>
+                                    <p class="text-gray-500 text-sm">冥想次数</p>
+                                </div>
+                                <div class="text-center">
+                                    <p class="text-2xl font-bold text-indigo-600">3.5</p>
+                                    <p class="text-gray-500 text-sm">总时长(小时)</p>
+                                </div>
+                                <div class="text-center">
+                                    <p class="text-2xl font-bold text-indigo-600">6</p>
+                                    <p class="text-gray-500 text-sm">连续天数</p>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <h3 class="font-medium text-gray-700">本周冥想时间</h3>
+                                    <span class="text-sm text-indigo-600">2小时15分钟</span>
+                                </div>
+                                
+                                <div class="flex items-end space-x-2 h-24 mb-1">
+                                    <div class="flex-1 flex flex-col items-center">
+                                        <div class="w-full bg-indigo-100 rounded-t-md" style="height: 30%"></div>
+                                        <span class="text-xs text-gray-500 mt-1">一</span>
+                                    </div>
+                                    <div class="flex-1 flex flex-col items-center">
+                                        <div class="w-full bg-indigo-100 rounded-t-md" style="height: 0%"></div>
+                                        <span class="text-xs text-gray-500 mt-1">二</span>
+                                    </div>
+                                    <div class="flex-1 flex flex-col items-center">
+                                        <div class="w-full bg-indigo-100 rounded-t-md" style="height: 80%"></div>
+                                        <span class="text-xs text-gray-500 mt-1">三</span>
+                                    </div>
+                                    <div class="flex-1 flex flex-col items-center">
+                                        <div class="w-full bg-indigo-100 rounded-t-md" style="height: 50%"></div>
+                                        <span class="text-xs text-gray-500 mt-1">四</span>
+                                    </div>
+                                    <div class="flex-1 flex flex-col items-center">
+                                        <div class="w-full bg-indigo-300 rounded-t-md" style="height: 65%"></div>
+                                        <span class="text-xs text-gray-500 mt-1">五</span>
+                                    </div>
+                                    <div class="flex-1 flex flex-col items-center">
+                                        <div class="w-full bg-indigo-600 rounded-t-md" style="height: 90%"></div>
+                                        <span class="text-xs font-medium text-indigo-600 mt-1">六</span>
+                                    </div>
+                                    <div class="flex-1 flex flex-col items-center">
+                                        <div class="w-full bg-indigo-100 rounded-t-md" style="height: 10%"></div>
+                                        <span class="text-xs text-gray-500 mt-1">日</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 成就和徽章 -->
+                        <div class="mb-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <h2 class="text-lg font-semibold text-gray-800">我的成就</h2>
+                                <a href="#" class="text-indigo-600 text-sm font-medium">查看全部</a>
+                            </div>
+                            
+                            <div class="flex space-x-4 overflow-x-auto pb-2">
+                                <div class="flex flex-col items-center flex-shrink-0 w-20">
+                                    <div class="w-16 h-16 rounded-full bg-indigo-100 flex items-center justify-center border-2 border-indigo-600 mb-2">
+                                        <span class="material-icons text-indigo-600">emoji_events</span>
+                                    </div>
+                                    <p class="text-xs text-gray-600 text-center">连续冥想7天</p>
+                                </div>
+                                <div class="flex flex-col items-center flex-shrink-0 w-20">
+                                    <div class="w-16 h-16 rounded-full bg-indigo-100 flex items-center justify-center border-2 border-indigo-600 mb-2">
+                                        <span class="material-icons text-indigo-600">psychology</span>
+                                    </div>
+                                    <p class="text-xs text-gray-600 text-center">完成5次正念冥想</p>
+                                </div>
+                                <div class="flex flex-col items-center flex-shrink-0 w-20">
+                                    <div class="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center border-2 border-gray-300 mb-2">
+                                        <span class="material-icons text-gray-400">hourglass_empty</span>
+                                    </div>
+                                    <p class="text-xs text-gray-400 text-center">累计冥想10小时</p>
+                                </div>
+                                <div class="flex flex-col items-center flex-shrink-0 w-20">
+                                    <div class="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center border-2 border-gray-300 mb-2">
+                                        <span class="material-icons text-gray-400">nightlight</span>
+                                    </div>
+                                    <p class="text-xs text-gray-400 text-center">完成10次睡眠冥想</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 最近活动 -->
+                        <div>
+                            <h2 class="text-lg font-semibold text-gray-800 mb-4">最近活动</h2>
+                            
+                            <div class="space-y-4">
+                                <div class="bg-white rounded-xl p-4 shadow-sm">
+                                    <div class="flex">
+                                        <div class="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center mr-3">
+                                            <span class="material-icons text-indigo-600">self_improvement</span>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-medium text-gray-800">完成了冥想课程</h3>
+                                            <p class="text-gray-500 text-sm">舒缓焦虑冥想 · 10分钟</p>
+                                            <p class="text-gray-400 text-xs mt-1">今天 08:15</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-white rounded-xl p-4 shadow-sm">
+                                    <div class="flex">
+                                        <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mr-3">
+                                            <span class="material-icons text-green-600">emoji_events</span>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-medium text-gray-800">获得了新成就</h3>
+                                            <p class="text-gray-500 text-sm">连续冥想7天</p>
+                                            <p class="text-gray-400 text-xs mt-1">昨天 21:30</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-white rounded-xl p-4 shadow-sm">
+                                    <div class="flex">
+                                        <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center mr-3">
+                                            <span class="material-icons text-purple-600">nightlight</span>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-medium text-gray-800">完成了冥想课程</h3>
+                                            <p class="text-gray-500 text-sm">深度睡眠引导 · 20分钟</p>
+                                            <p class="text-gray-400 text-xs mt-1">昨天 22:10</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 底部导航栏 -->
+                    <div class="absolute bottom-0 left-0 w-full bg-white border-t border-gray-200 p-2 flex justify-around">
+                        <div class="flex flex-col items-center">
+                            <span class="material-icons text-gray-400">home</span>
+                            <span class="text-xs text-gray-500 mt-1">首页</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <span class="material-icons text-gray-400">explore</span>
+                            <span class="text-xs text-gray-500 mt-1">发现</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <span class="material-icons text-gray-400">queue_music</span>
+                            <span class="text-xs text-gray-500 mt-1">音乐</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <span class="material-icons text-indigo-600">person</span>
+                            <span class="text-xs text-indigo-600 font-medium mt-1">我的</span>
+                        </div>
+                    </div>
+                    
+                    <div class="ios-home-indicator"></div>
+                </div>
+            </div>
+            <p class="mt-4 text-sm text-gray-600 text-center">个人统计页记录了用户的冥想时长、频率和获得的成就，激励用户坚持练习。</p>
+        </div>
+        
+        <!-- 设置页 -->
+        <div class="mb-12">
+            <h3 class="text-xl font-semibold mb-4 text-center">设置页面</h3>
+            <div class="app-container">
+                <div class="screen bg-gray-50">
+                    <div class="ios-status-bar bg-white text-gray-800 border-b border-gray-200">
+                        <div>9:41</div>
+                        <div class="flex space-x-2">
+                            <span class="material-icons text-sm">signal_cellular_alt</span>
+                            <span class="material-icons text-sm">wifi</span>
+                            <span class="material-icons text-sm">battery_full</span>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <div class="flex items-center mb-6">
+                            <button class="mr-3">
+                                <span class="material-icons">arrow_back_ios</span>
+                            </button>
+                            <h1 class="text-xl font-bold text-gray-800">设置</h1>
+                        </div>
+                        
+                        <!-- 账户设置 -->
+                        <div class="mb-8">
+                            <h2 class="text-sm font-medium text-gray-500 mb-3 uppercase tracking-wide">账户</h2>
+                            
+                            <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                                <div class="flex items-center p-4 border-b border-gray-100">
+                                    <div class="mr-3">
+                                        <span class="material-icons text-indigo-600">account_circle</span>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h3 class="text-gray-800">个人资料</h3>
+                                    </div>
+                                    <div>
+                                        <span class="material-icons text-gray-400">chevron_right</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center p-4 border-b border-gray-100">
+                                    <div class="mr-3">
+                                        <span class="material-icons text-indigo-600">subscriptions</span>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h3 class="text-gray-800">订阅管理</h3>
+                                    </div>
+                                    <div>
+                                        <span class="material-icons text-gray-400">chevron_right</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center p-4">
+                                    <div class="mr-3">
+                                        <span class="material-icons text-indigo-600">payments</span>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h3 class="text-gray-800">支付方式</h3>
+                                    </div>
+                                    <div>
+                                        <span class="material-icons text-gray-400">chevron_right</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 应用设置 -->
+                        <div class="mb-8">
+                            <h2 class="text-sm font-medium text-gray-500 mb-3 uppercase tracking-wide">应用设置</h2>
+                            
+                            <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                                <div class="flex items-center p-4 border-b border-gray-100">
+                                    <div class="mr-3">
+                                        <span class="material-icons text-indigo-600">notifications</span>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h3 class="text-gray-800">通知设置</h3>
+                                    </div>
+                                    <div>
+                                        <span class="material-icons text-gray-400">chevron_right</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center p-4 border-b border-gray-100">
+                                    <div class="mr-3">
+                                        <span class="material-icons text-indigo-600">privacy_tip</span>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h3 class="text-gray-800">隐私设置</h3>
+                                    </div>
+                                    <div>
+                                        <span class="material-icons text-gray-400">chevron_right</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center p-4 border-b border-gray-100">
+                                    <div class="mr-3">
+                                        <span class="material-icons text-indigo-600">download</span>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h3 class="text-gray-800">下载设置</h3>
+                                    </div>
+                                    <div>
+                                        <span class="material-icons text-gray-400">chevron_right</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center justify-between p-4">
+                                    <div class="flex items-center">
+                                        <div class="mr-3">
+                                            <span class="material-icons text-indigo-600">dark_mode</span>
+                                        </div>
+                                        <div>
+                                            <h3 class="text-gray-800">深色模式</h3>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="relative inline-block w-10 mr-2 align-middle select-none">
+                                            <input type="checkbox" id="toggle" class="sr-only" checked />
+                                            <div class="w-10 h-6 bg-indigo-600 rounded-full"></div>
+                                            <div class="absolute w-6 h-6 bg-white rounded-full shadow transform translate-x-4"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 支持与帮助 -->
+                        <div class="mb-8">
+                            <h2 class="text-sm font-medium text-gray-500 mb-3 uppercase tracking-wide">支持</h2>
+                            
+                            <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                                <div class="flex items-center p-4 border-b border-gray-100">
+                                    <div class="mr-3">
+                                        <span class="material-icons text-indigo-600">help</span>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h3 class="text-gray-800">帮助中心</h3>
+                                    </div>
+                                    <div>
+                                        <span class="material-icons text-gray-400">chevron_right</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center p-4 border-b border-gray-100">
+                                    <div class="mr-3">
+                                        <span class="material-icons text-indigo-600">feedback</span>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h3 class="text-gray-800">意见反馈</h3>
+                                    </div>
+                                    <div>
+                                        <span class="material-icons text-gray-400">chevron_right</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center p-4">
+                                    <div class="mr-3">
+                                        <span class="material-icons text-indigo-600">info</span>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h3 class="text-gray-800">关于我们</h3>
+                                    </div>
+                                    <div>
+                                        <span class="material-icons text-gray-400">chevron_right</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 退出登录 -->
+                        <button class="w-full py-4 text-red-500 font-semibold bg-white rounded-xl shadow-sm">
+                            退出登录
+                        </button>
+                    </div>
+                    
+                    <div class="ios-home-indicator"></div>
+                </div>
+            </div>
+            <p class="mt-4 text-sm text-gray-600 text-center">设置页面提供了个性化应用体验的选项，增强了用户对应用的控制感。</p>
+        </div>
+    </div>
+    
+    <!-- 结语 -->
+    <div class="max-w-4xl mx-auto my-12 bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-2xl font-semibold mb-4">设计总结</h2>
+        <p class="mb-4">宁心冥想App的设计遵循了以下原则：</p>
+        
+        <ul class="list-disc pl-6 mb-6 space-y-2">
+            <li>简洁而优雅的界面设计，减少干扰，提升冥想体验</li>
+            <li>直观的信息层次结构，用户可以轻松找到所需内容</li>
+            <li>柔和的色彩搭配，创造放松、平静的氛围</li>
+            <li>个性化的内容推荐，满足不同用户的需求</li>
+            <li>成就和数据统计功能，激励用户养成冥想习惯</li>
+            <li>流畅的交互设计，减少使用过程中的摩擦</li>
+        </ul>
+        
+        <p>这套原型设计涵盖了冥想应用的核心功能，通过了解用户的实际需求和使用场景，我们打造了一款既美观又实用的冥想App，帮助用户在繁忙的生活中找到内心的平静。</p>
+    </div>
+</body>
+</html> 
